@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31423.177
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raymaker.HttpClientFactoryExample", "Raymaker.HttpClientFactoryExample\Raymaker.HttpClientFactoryExample.csproj", "{564C3FB9-2190-4A08-A346-5758032119AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{564C3FB9-2190-4A08-A346-5758032119AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{564C3FB9-2190-4A08-A346-5758032119AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{564C3FB9-2190-4A08-A346-5758032119AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{564C3FB9-2190-4A08-A346-5758032119AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B42B1BE-5CA7-4302-AF9B-56346CA8C45A}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,25 @@
+﻿@page
+@model GithubModel
+
+@{
+    ViewData["Title"] = "Github Account";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to view github user details.</p>
+
+<form class="form-inline" method="post">
+    <div class="input-group mb-2 mr-sm-2">
+        <div class="input-group-prepend">
+            <div class="input-group-text">https://api.github.com/users/</div>
+        </div>
+        <input type="text" asp-for="Account.AccountName" class="form-control" placeholder="Username">
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Load account info</button>
+</form>
+
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">User info</label>
+  <textarea class="form-control" rows="8" asp-for="Account.AccountInfo">
+  </textarea>
+</div>
