@@ -1,25 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Raymaker.HttpClientFactoryExample.Models;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace Raymaker.HttpClientFactoryExample.Pages
 {
-    public class Account
-    {        
-        public string AccountInfo { get; set; }
-        public string AccountName { get; set; }
-    }
-
     public class GithubModel : PageModel
     {
         private readonly ILogger<GithubModel> _logger;
-        
-        public IHttpClientFactory HttpClientFactory;
+
+        private readonly IHttpClientFactory _httpClientFactory;
 
         [BindProperty]
         public Account Account { get; set; }
@@ -27,7 +19,7 @@ namespace Raymaker.HttpClientFactoryExample.Pages
         public GithubModel(ILogger<GithubModel> logger, IHttpClientFactory httpClientFactory)
         {
             _logger = logger;
-            HttpClientFactory = httpClientFactory;
+            _httpClientFactory = httpClientFactory;
         }
 
         public void OnGet()
@@ -36,7 +28,7 @@ namespace Raymaker.HttpClientFactoryExample.Pages
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return Page();
             }
@@ -45,9 +37,9 @@ namespace Raymaker.HttpClientFactoryExample.Pages
             return Page();
         }
 
-        public async Task LoadAccount()
+        private async Task LoadAccount()
         {
-            var httpClient = HttpClientFactory.CreateClient("GitHub");
+            var httpClient = _httpClientFactory.CreateClient("GitHub");
 
             Account.AccountInfo = await httpClient.GetStringAsync($"users/{Account.AccountName}");
         }
